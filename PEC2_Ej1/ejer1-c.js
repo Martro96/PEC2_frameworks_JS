@@ -15,12 +15,12 @@ const users = [
 const findOne = (list, { key, value }) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-        const element = list.find(element => element[key] === value);
-        if (element) {
-        resolve(element); 
-        } else {
-        reject({ msg: 'ERROR: Element Not Found' }); 
-        }
+            const element = list.find(element => element[key] === value);
+            if (element) {
+            resolve(element); 
+            } else {
+            reject({ msg: 'ERROR: Element Not Found' }); 
+            }
         }, 2000); 
     });
 };
