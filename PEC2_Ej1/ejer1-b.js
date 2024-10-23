@@ -28,13 +28,13 @@ const users = [
 // Ahora modificamos la llamada a findOne para que imprima el resultado correspondiente en caso de ser correcto o de haber error. 
 console.log('findOne success');
 findOne(users, { key: 'name', value: 'Carlos' })
-.then(({ name }) => console.log(`user: ${name}`)) // Si se resuelve la promesa, imprime el nombre del usuario.
-.catch(({ msg }) => console.log(msg)); // Si se rechaza la promesa, imprime el mensaje de error.
+.then(user => console.log(`user: ${user.name}`)) // Si se resuelve la promesa, imprime el nombre del usuario.
+.catch(error =>console.log(error.msg))// Si se rechaza la promesa, imprime el mensaje de error.
 
 console.log('findOne error');
 findOne(users, { key: 'name', value: 'Fermin' })
-.then(({ name }) => console.log(`user: ${name}`)) // Si se resuelve la promesa, imprime el nombre del usuario.
-.catch(({ msg }) => console.log(msg)); // Si se rechaza la promesa, imprime el mensaje de error.
+.then(user => console.log(`user: ${user.name}`)) // Si se resuelve la promesa, imprime el nombre del usuario.
+.catch(error =>console.log(error.msg))// Si se rechaza la promesa, imprime el mensaje de error.
 
 /*
 El resultado en la consola será:
