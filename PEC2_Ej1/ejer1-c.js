@@ -26,7 +26,7 @@ const findOne = (list, { key, value }) => {
 //Reemplazo de función que utiliza promesas por función async/await para buscarUsuario
 async function buscarUsuario(list, { key, value }) { //marcamos la función como asíncrona lo que nos permite usar await dentro de ella
     try { //Envolvemos el código en un bloque try para manejar posibles errores 
-        usuario = await findOne(list, { key, value }); //Usamos await para esperar a que la promesa retornada por findOne se resuelva. El resultado se asigna a la variable usuario.
+        const usuario = await findOne(list, { key, value }); //Usamos await para esperar a que la promesa retornada por findOne se resuelva. El resultado se asigna a la variable usuario.
         console.log(`user: ${usuario.name}`); // Imprimimos el resultado o el error por consola.
     } catch (error) { // Si se rechaza la promesa, imprime el mensaje de error.
         console.log(error.msg); // Imprimimos el error por consola.
