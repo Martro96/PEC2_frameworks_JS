@@ -34,7 +34,7 @@ async function buscarUsuario(list, { key, value }) { //marcamos la función como
     }
 }
 // Aquí es donde comenzamos los cambios para ejecutar en paralelo
-async function buscarUsuariosEnParalelo(users, nombres) { //Creamos la función que nos permitirá trabajar en paralelo con dos promesas, tomando el array de usuarios y un array de nombres a buscar.
+async function buscarUsuariosEnParalelo(users, nombres) { // Creamos la función que nos permitirá buscar múltiples usuarios en paralelo, tomando el array de usuarios (users) y un array de nombres (nombres) a buscar.
     
     const promises = nombres.map(nombre => buscarUsuario(users, { key: "name", value: nombre }));// Creamos un array de promesas llamando a buscarUsuario para cada nombre en el array nombres.
     // La función map() aplica la función proporcionada a cada elemento de nombres, creando un nuevo array donde cada elemento es el resultado de buscarUsuario, que busca en el array users si hay un usuario
