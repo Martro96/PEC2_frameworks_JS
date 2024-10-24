@@ -45,7 +45,7 @@ async function buscarUsuariosEnParalelo(users, nombres) { // Creamos la función
 
 
 // Imprime el resultado de cada promesa, mostrando su estado y valor (o razón de rechazo).
-console.log(results); 
+console.log(results); }
 
 // Llamada a la función buscarUsuariosEnParalelo con un array de nombres a buscar.
-buscarUsuariosEnParalelo(users, ["Carlos", "Fermin", "Ana"]);}
+buscarUsuariosEnParalelo(users, ["Carlos", "Fermin", "Ana"]);
