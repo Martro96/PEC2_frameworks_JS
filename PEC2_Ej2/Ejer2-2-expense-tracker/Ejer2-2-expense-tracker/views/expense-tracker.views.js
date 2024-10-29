@@ -31,6 +31,21 @@ createElement(tag, className) {
     return element; // Devolvemos el nuevo elemento creado
 }
 
+// Método para enlazar el evento de agregar gasto
+bindAddExpense(handler) {
+this.form.addEventListener("submit", event => {
+    event.preventDefault(); // Evita la recarga de la página al enviar el formulario
+    const text = this.inputText.value.trim(); // Obtiene el texto del gasto
+    const amount = parseFloat(this.inputAmount.value); // Obtiene el monto del gasto
+
+    if (text && !isNaN(amount)) {
+    handler(text, amount); // Llama al controlador para agregar el gasto
+    this.inputText.value = ""; // Limpia el campo de texto
+    this.inputAmount.value = ""; // Limpia el campo de cantidad
+    }
+});
+}
+
 // Método para mostrar la lista de gastos en la interfaz de usuario
 displayExpenses(expenses, deleteHandler, editHandler) {
     // Limpiamos la lista de gastos antes de actualizarla, eliminando todos los elementos hijos del ul
